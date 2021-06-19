@@ -31,7 +31,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Chromium",     NULL,       NULL,       1 << 0,       False,       -1 }, 
+	{ "Chromium",     NULL,       NULL,       0,       False,       -1 }, 
 
 };
 
@@ -111,7 +111,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY, 			XK_c,	   spawn, 	   {.v = chromiumcmd } },
+	{ MODKEY, 			XK_w,	   spawn, 	   {.v = chromiumcmd } },
 	{ 0, 				XF86XK_AudioMute, spawn, {.v = mutecmd } },
 	{ 0, 				XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
 	{ 0,				XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
