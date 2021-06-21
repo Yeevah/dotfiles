@@ -47,6 +47,10 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 };
 
+/* screen capture */
+static const char *printcmd[] = { "sh", "/usr/bin/sshot.sh", NULL };
+static const char *printscmd[] = { "sh", "/usr/bin/sshots.sh", NULL };
+
 /* volume */
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
@@ -55,6 +59,9 @@ static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL
 /* backlight */
 static const char *brupcmd[] = { "/usr/bin/light", "-A", "5", NULL };
 static const char *brdowncmd[] = { "/usr/bin/light", "-U", "5", NULL };
+
+/* screenlock */
+static const char *lockcmd[] = { "slock", NULL }; 
 
 /* key definitions */
 #define MODKEY Mod1Mask
@@ -117,6 +124,11 @@ static Key keys[] = {
 	{ 0,				XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
 	{ 0, 				XF86XK_MonBrightnessUp, spawn, {.v = brupcmd} },
 	{ 0, 				XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd} },
+	{ 0,				XK_Print,  spawn,	   {.v = printcmd } },
+	{ MODKEY,			XK_Print,  spawn,	   {.v = printscmd } },
+	{ 0,				XK_Super_L, spawn,	   {.v = dmenucmd } },	
+	{ MODKEY|ShiftMask,		XK_l, 	    spawn,	   {.v = lockcmd } },
+
 };
 
 /* button definitions */
