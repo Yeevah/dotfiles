@@ -57,8 +57,8 @@ static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL }
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 
 /* backlight */
-static const char *brupcmd[] = { "/usr/bin/light", "-A", "5", NULL };
-static const char *brdowncmd[] = { "/usr/bin/light", "-U", "5", NULL };
+static const char *brupcmd[] = { "sudo", "/usr/bin/light", "-A", "5", NULL };
+static const char *brdowncmd[] = { "sudo", "/usr/bin/light", "-U", "5", NULL };
 
 /* screenlock */
 static const char *lockcmd[] = { "slock", NULL }; 
