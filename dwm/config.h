@@ -10,7 +10,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Jetbrains Mono:size=10" };
 static const char dmenufont[]       = "Jetbrains Mono:size=10";
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
@@ -81,6 +81,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char  *chromiumcmd[] = { "chromium",  NULL };
 static const char  *obscmd[] = { "obs", NULL };
+static const char *filecmd[] = { "st", "ranger", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -131,7 +132,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_Print,  spawn,	   {.v = printscmd } },
 	{ 0,				XK_Super_L, spawn,	   {.v = dmenucmd } },	
 	{ MODKEY|ShiftMask,		XK_l, 	    spawn,	   {.v = lockcmd } },
-	{ MODKEY, 			XK_o, 	  spawn,	   {.v = obscmd } }, 
+	{ MODKEY, 			XK_o,	    spawn,	   {.v = obscmd } }, 
+	{ MODKEY, 			XK_r,	    spawn, 	   {.v = filecmd } },
 };
 
 /* button definitions */
