@@ -15,16 +15,12 @@ alias remove="sudo pacman -Rns"
 alias update="sudo pacman -Syu"
 alias clean="sudo pacman -Scc"
 
-alias xinitrc="vim ~/.xinitrc"
-alias bashrc="vim ~/.bashrc"
-alias vimrc="vim ~/.vimrc"
+alias xinitrc="$EDITOR ~/.xinitrc"
+alias bashrc="$EDITOR ~/.bashrc"
+alias vimrc="$EDITOR ~/.vimrc"
 
 alias fetch="neofetch"
-alias sdown="shutdown now"
-alias amogus="cat /home/yeevah/amogus"
 alias y="youtube-dl"
-#Value
-export EDITOR=vim
 
 #Bash Completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
