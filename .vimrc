@@ -5,7 +5,8 @@ filetype plugin on
 
 set laststatus=2
 syntax enable
-colorscheme nord
+colorscheme gruvbox-material
+set bg=dark
 
 command! Blog :0r $HOME/.vim/templates/blog.html.skel
 command! Tugas :0r $HOME/.vim/templates/tugas.ms.skel
