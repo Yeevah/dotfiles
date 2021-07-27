@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export EDITOR=vim
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
@@ -22,6 +23,8 @@ alias vimrc="vim EDITOR ~/.vimrc"
 alias fetch="neofetch"
 alias y="youtube-dl"
 alias lofi="mpv --playlist=/home/yeevah/lofi/playlist --shuffle"
+
+ayy() { git clone https://aur.archlinux.org/$1.git && cd $1 && makepkg --noconfirm -isc && cd .. && rm -rf $1 ;}
 
 #Bash Completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
