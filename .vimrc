@@ -14,12 +14,10 @@ command! Bom :0r $HOME/.vim/templates/bom.html.skel
 "Capitalize first letter of each word in a selection using Vim"
 command! Caps : s/\<./\u&/g
 
+autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
+autocmd FileType html inoremap </ </<C-x><C-o>
+
 "Keymap"
 imap jj <Esc>
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-
 
 
