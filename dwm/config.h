@@ -82,7 +82,6 @@ static const char *termcmd[]  = { "st", NULL };
 static const char  *browsercmd[] = { "firefox",  NULL };
 static const char  *obscmd[] = { "obs", NULL };
 static const char *filecmd[] = { "st", "ranger", NULL };
-static const char *offcmd[] = { "poweroff", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -135,7 +134,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_l, 	    spawn,	   {.v = lockcmd } },
 	{ MODKEY, 			XK_o,	    spawn,	   {.v = obscmd } }, 
 	{ MODKEY, 			XK_r,	    spawn, 	   {.v = filecmd } },
-	{ MODKEY, 			XK_Delete,  spawn, 	   {.v = offcmd } },
 };
 
 /* button definitions */
