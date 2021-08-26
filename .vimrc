@@ -20,4 +20,3 @@ autocmd FileType html inoremap </ </<C-x><C-o>
 "Keymap"
 imap jj <Esc>
 
-

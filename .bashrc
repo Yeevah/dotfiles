@@ -7,7 +7,8 @@
 
 export EDITOR=vim
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
+PS1='[vin@\h \W]\$ '
 
 #Alias
 
@@ -23,6 +24,7 @@ alias vimrc="vim EDITOR ~/.vimrc"
 alias fetch="neofetch"
 alias y="youtube-dl"
 alias lofi="mpv --playlist=/home/yeevah/lofi/playlist --shuffle"
+alias slider="~/.local/bin/slider"
 
 ayy() { git clone https://aur.archlinux.org/$1.git && cd $1 && makepkg --noconfirm -isc && cd .. && rm -rf $1 ;}
 
