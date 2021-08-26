@@ -31,7 +31,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     	NULL,       NULL,       0,            1,           -1 },
-	{ "Chromium",   NULL,       NULL,       0,            False,       -1 }, 
+	{ "Drawing",    NULL,       NULL,       0,            1,           -1 },
 	{ "OBS",     	NULL,       NULL,       0 >> 6,       False,       -1 }, 
 
 };
@@ -79,9 +79,11 @@ static const char *lockcmd[] = { "slock", NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char  *chromiumcmd[] = { "chromium",  NULL };
+static const char  *browsercmd[] = { "firefox",  NULL };
 static const char  *obscmd[] = { "obs", NULL };
 static const char *filecmd[] = { "st", "ranger", NULL };
+static const char *powercmd[] = { "poweroff", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -122,7 +124,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	/* custom keys */
-	{ MODKEY, 			XK_w,	   spawn, 	   {.v = chromiumcmd } },
+	{ MODKEY, 			XK_w,	   spawn, 	   {.v = browsercmd } },
 	{ 0, 				XF86XK_AudioMute, spawn, {.v = mutecmd } },
 	{ 0, 				XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
 	{ 0,				XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
@@ -134,6 +136,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_l, 	    spawn,	   {.v = lockcmd } },
 	{ MODKEY, 			XK_o,	    spawn,	   {.v = obscmd } }, 
 	{ MODKEY, 			XK_r,	    spawn, 	   {.v = filecmd } },
+	{ MODKEY,			XK_Delete,  spawn,	   {.v = powercmd } },
 };
 
 /* button definitions */
